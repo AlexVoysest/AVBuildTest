@@ -17,10 +17,8 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
   
-- script: 
-    echo AWS Command lines
 - task: AWSCLI@1
-      inputs:
-        awsCredentials: 'AWSserviceconnection'
-        regionName: 'us-east-1'
-        awsCommand: 'AWS ec2 describe-instance --output table'
+  inputs:
+    awsCredentials: 'AWSserviceconnection'
+    regionName: 'us-east-1'
+    awsCommand: 'aws ec2 describe-instances'
