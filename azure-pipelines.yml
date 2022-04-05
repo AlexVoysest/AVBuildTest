@@ -30,3 +30,12 @@ steps:
     command: 'build'
     Dockerfile: '**/Dockerfile'
     arguments: '-t avappimage1:latest'
+- task: twistcli-scan@1
+  inputs:
+    scanType: 'images'
+    twistlockService: 'prisma-cloud-console'
+    vulnerabilityThreshold: 'high'
+    onlyFixed: false
+    gracePeriod: '0'
+    complianceThreshold: 'high'
+    artifact: 'avappimage1:latest'
