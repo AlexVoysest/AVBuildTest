@@ -19,7 +19,7 @@ steps:
   
 - script: 
     echo AWS Command lines
-    - task: AWSCLI@1
+- task: AWSCLI@1
       inputs:
         awsCredentials: 'AWSserviceconnection'
         regionName: 'us-east-1'
