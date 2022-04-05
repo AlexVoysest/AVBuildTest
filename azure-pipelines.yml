@@ -21,4 +21,6 @@ steps:
   inputs:
     awsCredentials: 'AWSserviceconnection'
     regionName: 'us-east-1'
-    awsCommand: 'aws ec2 describe-instances'
+    awsCommand: 'ec2'
+    awsSubCommand: 'describe-instances'
+    awsArguments: '--output table'
