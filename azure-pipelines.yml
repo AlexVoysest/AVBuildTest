@@ -24,3 +24,9 @@ steps:
     awsCommand: 'ec2'
     awsSubCommand: 'describe-instances'
     awsArguments: '--output table'
+
+- task: Docker@2
+  inputs:
+    command: 'build'
+    Dockerfile: '**/Dockerfile'
+    arguments: '-t avappimage1:latest'
