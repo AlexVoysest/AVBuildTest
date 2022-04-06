@@ -30,10 +30,16 @@ steps:
     command: 'build'
     Dockerfile: '**/Dockerfile'
     arguments: '-t avappimage1:latest'
-- task: twistcli-scan@1
+
+#- task: twistcli-scan@1
+#  inputs:
+#    scanType: 'images'
+#    twistlockService: 'prisma-cloud-console'
+#    onlyFixed: false
+#    gracePeriod: '0'
+#    artifact: 'avappimage1:latest'
+- task: prisma-cloud-compute-scan@3
   inputs:
     scanType: 'images'
-    twistlockService: 'prisma-cloud-console'
-    onlyFixed: false
-    gracePeriod: '0'
+    twistlockService: 'Prisma Cloud Compute'
     artifact: 'avappimage1:latest'
